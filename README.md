@@ -110,10 +110,7 @@ $$
 
 ### Core Functions
 
-- `jmbayesBig()`
-- `jmcsBig()`
-- `jmstanBig()`
-- `joinRMLBig()` -> Smallest Processing Time using EHR Data
+The core functions include `jmbayesBig()`, `jmcsBig()`, and `jmstanBig()`. The function `joinRMLBig()` offers the fastest processing time on EHR data by using a frequentist maximum likelihood estimation approach optimized for big data applications.
 
 ---
 
