@@ -1,4 +1,4 @@
-# 🧠 jmBIG: Joint Modeling of Longitudinal and Survival Data for Big Health Data
+# 🧠 Joint Modeling of Longitudinal and Survival Data for Big Health Data
 
 > **Paper Reviewed**:  
 Bhattacharjee, A., Rajbongshi, B., & Vishwakarma, G.K.  
