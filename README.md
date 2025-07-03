@@ -131,7 +131,7 @@ The core functions include `jmbayesBig()`, `jmcsBig()`, and `jmstanBig()`. The f
 
 Emmanuel Masavo DJEGOU |
 Ph.D. Candidate in Statistics @ Missouri S&T | 
-Data Science Intern @RGA | 
+Data Science Intern @ RGA | 
 
 Key Words: Joint Modeling, Survival Analysis, Healthcare, Big Data 
 ---
