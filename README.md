@@ -60,7 +60,7 @@ $$
 \log h_0(t) = \gamma_0^0 + \sum_{q=1}^{Q} \gamma_0^q \cdot B_q(t, \mu)
 $$
 
-- `B_q(t, ν)`: q-th B-spline basis function with knots $\mu$
+- `B_q(t, ν)`: q-th B-spline basis function with knots $\nu$
 
 ---
 
