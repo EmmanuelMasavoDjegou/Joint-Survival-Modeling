@@ -1,20 +1,31 @@
-# Joint Modeling of Longitudinal and Survival Data in Big Health Data
+# 🧠 jmBIG: Joint Modeling of Longitudinal and Survival Data for Big Health Data
 
-**Paper Summary — 2024**  
-This repository provides a concise overview of joint modeling techniques for longitudinal and survival data with a focus on the `jmBIG` framework and related R packages. The notes are based on a full review of recent methodologies for large-scale electronic health records (EHR) analysis.
+> **Paper Reviewed**:  
+Bhattacharjee, A., Rajbongshi, B., & Vishwakarma, G.K.  
+**jmBIG: Enhancing dynamic risk prediction and personalized medicine through joint modeling of longitudinal and survival data in big routinely collected data**  
+*BMC Medical Research Methodology*, 24, 172 (2024).  
+📎 https://doi.org/10.1186/s12874-024-02289-0
 
 ---
 
-## 🧠 Motivation
+## 📌 Overview
 
-Traditional survival models often rely on static covariates measured at a single time point, failing to capture how patient profiles evolve over time. Joint modeling addresses this by incorporating:
+This repository summarizes key concepts, models, and tools introduced in the 2024 paper by Bhattacharjee et al. The authors present `jmBIG` — a scalable **Bayesian framework** for **joint modeling of longitudinal and survival data** in the context of **large, routinely collected healthcare datasets** such as Electronic Health Records (EHRs).
 
-- **Longitudinal data**: repeated clinical measurements (e.g., lab results, vitals)
-- **Time-to-event data**: the time until a key event (e.g., death, relapse) occurs
+---
 
-**Use Cases**:
-- Personalized healthcare interventions
-- Monitoring disease progression and event risk (e.g., hospitalization, mortality)
+## 🎯 Motivation
+
+Traditional survival analysis often ignores temporal patterns in patient health trajectories. `jmBIG` integrates:
+
+- **Longitudinal data**: repeated clinical measurements (e.g., biomarkers, vitals)
+- **Time-to-event data**: event outcomes like death, disease onset, readmission
+
+By modeling these jointly, `jmBIG` enables:
+
+- Improved **dynamic risk prediction**
+- Personalized treatment planning
+- Handling **high-dimensional** and **heterogeneous** data at scale
 
 ---
 
