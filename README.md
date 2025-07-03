@@ -34,8 +34,9 @@ By modeling these jointly, `jmBIG` enables:
 ### 1. Longitudinal Submodel
 Generalized Linear Mixed Model (GLMM):
 
-η_i(t) = g(E[Y_i(t) | b_i]) = x_iᵀ(t)β + z_iᵀ(t)b_i
-
+$$
+\eta_i(t) = g\left(\mathbb{E}\left[Y_i(t) \mid b_i\right]\right) = x_i^\top(t)\beta + z_i^\top(t)b_i
+$$
 
 - `g(·)`: Link function  
 - `x_i(t), z_i(t)`: Time-dependent covariates  
