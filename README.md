@@ -40,20 +40,27 @@ $$
 
 - `g(·)`: Link function assumed one-to-one  
 - `x_i(t), z_i(t)`: Time-dependent design covariates for the fixed effects $\beta$ and random effects $b_i$, respectively  
-- `b_i ~ MVN(0, $\Delta$)`: Random effects
+- `b_i ~ MVN(0, D)` or `b_i ~ t(df)`: Random effects with $D$ the covariance matrix
 
 ### 2. Survival Submodel
 Extended Cox Proportional Hazards Model:
 
-h_i(t | H_i(t), w_i(t)) = h₀(t) · exp(γᵀw_i(t) + f(H_i(t), b_i, α))
+$$
+h_i(t \mid H_i(t), w_i(t)) = h_0(t) \cdot \exp\left( \gamma^\top w_i(t) + f(H_i(t), b_i, \alpha) \right)
+$$
 
-
-- `H_i(t) = {η_i(s), 0 ≤ s < t}`: History of the longitudinal process  
+- `H_i(t) = {η_i(s), 0 ≤ s < t}`: History of the longitudinal process up to time $t$
 - `f(·)`: Association between history and survival risk
+- `w_i(t)`: Additional time-dependent covariates
+- $\alpha$: Association between features of the longitudinal process up to time $t$ and the hazard of the event at the same time. 
 
 ### 3. Baseline Hazard (B-spline Representation)
 
-- `B_q(t, ν)`: q-th B-spline basis function with knots `ν`
+$$
+\log h_0(t) = \gamma_0^0 + \sum_{q=1}^{Q} \gamma_0^q \cdot B_q(t)
+$$
+
+- `B_q(t, ν)`: q-th B-spline basis function with knots $\mu$
 
 ---
 
