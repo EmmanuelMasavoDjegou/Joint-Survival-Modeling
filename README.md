@@ -38,9 +38,9 @@ $$
 \eta_i(t) = g\left(\mathbb{E}\left[Y_i(t) \mid b_i\right]\right) = x_i^\top(t)\beta + z_i^\top(t)b_i
 $$
 
-- `g(·)`: Link function  
-- `x_i(t), z_i(t)`: Time-dependent covariates  
-- `b_i ~ N(0, Δ)`: Random effects
+- `g(·)`: Link function assumed one-to-one  
+- `x_i(t), z_i(t)`: Time-dependent design covariates for the fixed effects $\beta$ and random effects $b_i$, respectively  
+- `b_i ~ MVN(0, \Delta)`: Random effects
 
 ### 2. Survival Submodel
 Extended Cox Proportional Hazards Model:
