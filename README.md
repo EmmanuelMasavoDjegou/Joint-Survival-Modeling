@@ -1,4 +1,4 @@
-# Joint Modeling of Longitudinal and Survival Data in Big Health Datasets
+# Joint Modeling of Longitudinal and Survival Data in Big Health Data
 
 **Paper Summary — 2024**  
 This repository provides a concise overview of joint modeling techniques for longitudinal and survival data with a focus on the `jmBIG` framework and related R packages. The notes are based on a full review of recent methodologies for large-scale electronic health records (EHR) analysis.
