@@ -57,7 +57,7 @@ $$
 ### 3. Baseline Hazard (B-spline Representation)
 
 $$
-\log h_0(t) = \gamma_0^0 + \sum_{q=1}^{Q} \gamma_0^q \cdot B_q(t)
+\log h_0(t) = \gamma_0^0 + \sum_{q=1}^{Q} \gamma_0^q \cdot B_q(t, \mu)
 $$
 
 - `B_q(t, ν)`: q-th B-spline basis function with knots $\mu$
@@ -67,16 +67,13 @@ $$
 ## 📐 Estimation Techniques
 
 ### Frequentist:
-- Maximum Likelihood Estimation (MLE)
-- Kaplan-Meier estimator
-- Iterative optimization algorithms
+- Maximum Likelihood Estimation (MLE) via iterative optimization algorithms
+- Nonparametric Estimation (Kaplan-Meier Estimator)
 
 ### Bayesian:
-- MCMC sampling for posterior distributions
+- Markov Chain Monte Carlo (MCMC) sampling for posterior distributions
 - Incorporates prior knowledge
-- Captures model uncertainty and non-linearity
-
-p(β, θ | y, t) ∝ L(β, θ) · p(β, θ)
+- Estimate model uncertainty and can account for non-linearity
 
 ---
 
@@ -84,11 +81,21 @@ p(β, θ | y, t) ∝ L(β, θ) · p(β, θ)
 
 | Package        | Method      | Key Features |
 |----------------|-------------|--------------|
-| `jmBIG`        | Bayesian    | Scalable for large datasets, auto data split, conditional survival, random effects |
 | `JMbayes2`     | Bayesian    | Time-varying coefficients, diagnostics, visualization |
 | `fastJM`       | Bayesian    | Efficient MCMC, shared effects, scalability |
-| `joinRML`      | Frequentist | MLE-based, shared random effects, good for big data |
+| `joineRML`     | Frequentist | MLE-based, shared random effects, good for big data |
 | `rstanarm`     | Bayesian    | Stan backend, multiple longitudinal markers, diagnostics |
+| `jmBIG`        | Bayesian    | Scalable for large datasets, auto data split, conditional survival, random effects |
+
+---
+
+## ⚠️ Challenges & Considerations
+
+- **Computational burden** (especially for full Bayesian inference)
+- **Memory constraints** on large datasets
+- **Model sensitivity** to parameter and prior choices
+
+> ✅ Solutions include cloud-based computing, parallel processing, or memory-optimized tools like `jmBIG`.
 
 ---
 
@@ -103,10 +110,10 @@ p(β, θ | y, t) ∝ L(β, θ) · p(β, θ)
 
 ### Core Functions
 
-- `jim()`: Bayesian joint model fitting  
-- `survitJMCS()`: Compute conditional survival probabilities  
-- `joinRML_big()`: Fits joint model on chunks and aggregates estimates  
-- `juntrig()`: Automates full modeling workflow
+- `jmbayesBig()`
+- `jmcsBig()`
+- `jmstanBig()`
+- `joinRMLBig()` -> Smallest Processing Time using EHR Data
 
 ---
 
@@ -116,32 +123,14 @@ p(β, θ | y, t) ∝ L(β, θ) · p(β, θ)
 - Predicted longitudinal trajectories  
 - Time-to-event survival probabilities  
 - Visualization and diagnostic tools  
-- Individual vs. population-level predictions
+- Individual vs. cluster-level predictions
 
----
-
-## ⚠️ Challenges & Considerations
-
-- **Computational burden** (especially for full Bayesian inference)
-- **Memory constraints** on large datasets
-- **Model sensitivity** to parameter and prior choices
-
-> ✅ Solutions include cloud-based computing, parallel processing, or memory-optimized tools like `jmBIG`.
-
----
-
-## 📚 References
-
-- Rizopoulos, D. et al. (2022). *Joint Modeling of Longitudinal and Survival Data in R with JMbayes2*  
-- Rizopoulos, D. (2023). *Scalable Joint Models using jmBIG*
 
 ---
 
 ## 👨‍💻 Author
 
-Notes prepared by **Emmanuel Masavo DJEGOU**, Ph.D. Candidate in Statistics  
-Focus: Joint Modeling, Survival Analysis, AI in Health  
-🔗 [LinkedIn](https://www.linkedin.com/in/emmanuel-djegou) • [Medium](https://medium.com/@emmanueldjegou5)
-
+Notes prepared by **Emmanuel Masavo DJEGOU**, Ph.D. Candidate in Statistics @ Missouri S&T, Data Science Intern @RGA  
+Focus: Joint Modeling, Survival Analysis, Biometric Data  
 ---
 
